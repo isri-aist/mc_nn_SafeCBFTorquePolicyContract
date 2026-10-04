@@ -16,7 +16,7 @@ Quadratic Program (CBF-QP) filters before commanding the robot.
 mc_nn handles model discovery, scheduling, policy lifecycle, GUI controls and
 common logs; this contract provides the robot interface and CBF-QP integration.
 It is built as an
-[external mc_nn contract](https://github.com/Noceo200/mc_nn/tree/main/contracts/README.md#external-contracts)
+[external mc_nn contract](https://github.com/isri-aist/mc_nn/tree/main/contracts/README.md#external-contracts)
 against an installed mc_nn.
 
 The CBF-QP enforces configured physical and safety constraints, including:
@@ -61,7 +61,7 @@ mc_nn, follow the build, policy and host configuration instructions below.
 - Optional: `mc_joystick_plugin` for joystick commands (detected at build time;
   keyboard and GUI commands always work).
 - A host controller that (both done by mc_nn's `MCNN` controller; see
-  [Host controller requirements](https://github.com/Noceo200/mc_nn/tree/main/contracts/README.md#host-controller-requirements) for other hosts):
+  [Host controller requirements](https://github.com/isri-aist/mc_nn/tree/main/contracts/README.md#host-controller-requirements) for other hosts):
   - calls mc_nn's post-solve step (`"MCNN::AfterSolve"`), used when the QP is
     bypassed (`use_QP: false`). mc_nn refuses to start the policy otherwise;
   - runs with `FeedbackType: ClosedLoopIntegrateReal` (a warning is printed otherwise).
@@ -221,4 +221,4 @@ Every controller timestep (physics_step_size):
 ```
 
 [mc_rtc]: https://jrl-umi3218.github.io/mc_rtc/
-[mc_nn]: https://github.com/Noceo200/mc_nn
+[mc_nn]: https://github.com/isri-aist/mc_nn
